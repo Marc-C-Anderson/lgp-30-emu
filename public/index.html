@@ -8,10 +8,6 @@
 </head>
 
 <body>
-	<!-- <h1 id="heading">Hello, World!</h1>
-		<p>This page comes from a static asset stored at `public/index.html` as configured in `wrangler.jsonc`.</p> -->
-
-
 	<h1>1957 IRE TRANSACTIONS ON ELECTRONIC COMPUTERS 5</h1>
 	<h2>The Logical Design of a Simple General Purpose Computer*</h2>
 	<h3>STANLEY P. FRANKELt</h3>
@@ -104,11 +100,11 @@
 	<h3>REQUIREMENTS FOR CONTINUOUS MEMORY</h3>
 
 	<p>&nbsp;&nbsp;Several phases of the operation of thle computer, each terminated at the end of a word period, are to
-		be distinguished: in phase 1 (abbreviated f1) the instruction next to be obeyed is sought. This requires
-		selecting the appropriate track and waiting for the desired word in that track to appear. In f2 which occupies
+		be distinguished: in phase 1 (abbreviated &phi;1) the instruction next to be obeyed is sought. This requires
+		selecting the appropriate track and waiting for the desired word in that track to appear. In &phi;2 which occupies
 		just one word period the instruction word is set into the instruction register. In q3 the operand word (i.e.,
 		the word in the bulk memory designated by the address then held in the instruction register) is sought by a
-		process similar to that of f1. In f4, which lasts for one word period, the operation is executed, except for the
+		process similar to that of &phi;1. In &phi;4, which lasts for one word period, the operation is executed, except for the
 		prolonged operations, multiplication and division. For these the execution extends into phases 5, 6, 7, and 8.
 		These extend the time for execution somewhat beyond the time for one drum revolution.</p>
 	<p>&nbsp;&nbsp;Except in prolonged operations the phases are distinguished by two toggles, named F and G. Phases 5
@@ -124,9 +120,9 @@
 		subtraction processes. (Since these operations are performed serially, only one carry bit need be "remembered"
 		in each digit period.) The search operations of phases 1 and 3 are performed with the help of toggle K, as
 		described below.</p>
-	<p>&nbsp;&nbsp;During the execution of a multiplication or division (after f4 in which the mLultiplicand or divisor
+	<p>&nbsp;&nbsp;During the execution of a multiplication or division (after &phi;4 in which the mLultiplicand or divisor
 		is read into the instruction register) there are additional requirements for continuous memory. These
-		requirements are met by the P toggles, which after f4 are not needed in their track selecting capacity. The
+		requirements are met by the P toggles, which after &phi;4 are not needed in their track selecting capacity. The
 		functions of the toggles are summarized in Table II.</p>
 
 	<h3>THE DEVELOPMENT OF THE LOGICAL DESIGN</h3>
@@ -134,8 +130,19 @@
 	<p>&nbsp;&nbsp;Except for the occurrence of prolonged operations, H stays in its 0 state, as indicated by the symbol
 		H. The first four phases are distinguished by the four states F and G, as follows:</p>
 
+	<p>&nbsp;&nbsp;The "product" of two or more symbols indicates the simultaneous occurrence of the indicated settings.
+		Thus the symbol for 42, FGH, has the value 1 only if F=O (hence F= 1) and G = 1 and H=O.</p>
 
-
+	<p>&nbsp;&nbsp;The last digit period of a word period is marked by a signal denoted by t, derived from the timing
+		tracks. Since each phase change occurs at the end of a word period, the symbol t is included as a factor in each
+		of the F and G setting equations. The phases 1 to 4 occur cyclically in the order listed. Toggle F has the state
+		0 during phases 1 and 2. It is set to the 1 state at the end of 42. It holds the state 1 during 4)3 and 44, then
+		is set to 0 as 41 is again entered. Since 42 and 44 consist of only one word period each the settings of F are
+		easily described. F is set to 1 at time t of any 42 period, to 0 at t of a 04 word period. The circumstances
+		calling for setting it to 1 are denoted F', those calling for setting it to 0 are denoted F'. (The prime here
+		indicates the new condition of the toggle. It should not be mistaken for negation, which is here indicated by
+		boldface.) Thus we have the two following partial equations (the + following an expression indicates that other
+		equations show contributions to that input):</p>
 </body>
 
 </html>
